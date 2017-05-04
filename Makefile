@@ -13,5 +13,5 @@ clean:
 	@ rm -rf $(VENV)
 
 $(VENV): requirements.txt
-	@ virtualenv $@
+	@ virtualenv -p python2 $@
 	@ $(PIP) install -r $<
