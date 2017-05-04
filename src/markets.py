@@ -2,14 +2,17 @@ from collections import namedtuple
 from tabulate import tabulate
 from poloniex import Poloniex
 from six import iteritems, print_
-
+import os
 try:
-    from config import apikey, secret
+    apikey = os.environ.get('POLONIEX_API_KEY')
+    secret = os.environ.get('POLONIEX_SECRET')
+
 except ImportError:
-    print_('error: rename src/config.py.changeme in src/config.py and edit.')
+    print_('error: add your key and secret as environment variables.')
 
 
 Result = namedtuple('Result', ['market', 'shares', 'value', 'delta'])
+
 
 def get_results(polo, market='all'):
     history = polo.returnTradeHistory(currencyPair=market, start=0, end=2**32-1)
