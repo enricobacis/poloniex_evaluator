@@ -1,4 +1,4 @@
-.PHONY: run
+.PHONY: clean run
 
 MAIN := src/markets.py
 VENV := venv
@@ -8,6 +8,9 @@ PYTHON := $(VENV)/bin/python
 
 run: $(VENV) $(MAIN)
 	@ $(PYTHON) $(MAIN)
+
+clean:
+	@ rm -rf $(VENV)
 
 $(VENV): requirements.txt
 	@ virtualenv $@
