@@ -9,8 +9,9 @@ Evaulate your Poloniex market trades
 ## Usage
 
 1. Clone this repository
-2. Rename the file `src/config.py.changeme` in `src/config.py`
-3. Edit the file with your Poloniex `APIKEY` and `SECRET`
+2. Add the following environment variables with `export`:  
+    `export 'POLONIEX_API_KEY'='<YOUR_POLONIEX_API_KEY>'`   
+    `export 'POLONIEX_SECRET'='<YOUR_POLONIEX_SECRET>'`  
 4. `make run`
 
 ## Output
